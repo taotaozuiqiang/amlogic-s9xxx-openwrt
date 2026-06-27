@@ -56,3 +56,10 @@ git clone -b main https://github.com/ophub/luci-app-amlogic.git package/luci-app
 # git apply ../config/patches/{0001*,0002*}.patch --directory=feeds/luci
 #
 # ------------------------------- Other ends -------------------------------
+# 强行注入创维 E900V21E 的 MT7668RSN 无线网卡、蓝牙驱动及固件
+echo "CONFIG_PACKAGE_kmod-mt7668-common=y" >> .config
+echo "CONFIG_PACKAGE_kmod-mt76x2u=y" >> .config
+echo "CONFIG_PACKAGE_wireless-regdb=y" >> .config
+echo "CONFIG_PACKAGE_mt7668-firmware=y" >> .config
+echo "CONFIG_PACKAGE_wpad-basic-wolfssl=y" >> .config
+echo "CONFIG_PACKAGE_iw=y" >> .config
